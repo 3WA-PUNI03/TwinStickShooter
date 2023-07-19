@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerShoot : MonoBehaviour
@@ -12,6 +13,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] float _fireRate;
     [SerializeField] BulletDirection _bd;
     [SerializeField] Transform _spawnPoint;
+
+    [SerializeField] UnityEvent _onShoot;
 
     Coroutine ShootRoutine { get; set; }
 
@@ -30,6 +33,7 @@ public class PlayerShoot : MonoBehaviour
             var waiter = new WaitForSeconds(_fireRate);
             while(true)
             {
+                _onShoot?.Invoke();
                 Instantiate(_bd, _spawnPoint.position, Quaternion.identity).SetDirection(_aimCursor);
                 yield return waiter;
             }

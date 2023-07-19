@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
 
 public class ScoreManager : MonoBehaviour
 {
-    int _deathCount = 0;
+    [SerializeField] TextMeshProUGUI _scoreText;
+    int _score = 0;
 
     public static ScoreManager Instance { get; private set; }
     
@@ -16,8 +19,10 @@ public class ScoreManager : MonoBehaviour
 
     internal void AddScore(int count)
     {
-        _deathCount += count;
-        Debug.Log($" Death count : {_deathCount}");
+        _score += count;
+        _scoreText.text = _score.ToString();
+
+        Debug.Log($" Score : {_score}");
     }
 
 

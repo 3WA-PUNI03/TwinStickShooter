@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2743176585008362426}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3611039642692954708
 MonoBehaviour:
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0.1
+  _damage: 100
 --- !u!50 &2456183110507666195
 Rigidbody2D:
   serializedVersion: 4
@@ -258,7 +259,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 8b4ff842fa8e52f46bc7e83fd1f108f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

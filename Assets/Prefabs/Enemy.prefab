@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4964912594607689525}
   - component: {fileID: 417835463558958464}
   - component: {fileID: 7916302931598380245}
+  - component: {fileID: 448694698641341253}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: -4964912594607689525}
-  _speed: 0.1
+  _speed: 0.56
 --- !u!50 &-4964912594607689525
 Rigidbody2D:
   serializedVersion: 4
@@ -58,7 +59,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2977231995395605566}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -124,6 +125,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f0d796d85ab284a964aee738bddc59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPlayer: 0
+  _startHealth: 50
+  _scoreOnDeath: 10
+--- !u!114 &448694698641341253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2977231995395605566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af00144e617868344a5de7bc438c7adf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageAmount: 5
 --- !u!1001 &3882099159593384251
 PrefabInstance:
   m_ObjectHideFlags: 0

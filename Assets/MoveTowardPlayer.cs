@@ -16,7 +16,7 @@ public class MoveTowardPlayer : MonoBehaviour
 
         var dir = (PlayerController.Instance.transform.position - transform.position).normalized;
 
-        _rb.MovePosition(transform.position + (dir * _speed));
+        _rb.velocity = dir * _speed;
 
 
 
