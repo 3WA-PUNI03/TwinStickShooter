@@ -7,22 +7,31 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField] bool _isPlayer;
-    [SerializeField] int _startHealth;
     [SerializeField] int _scoreOnDeath;
 
+    [Header("Health")]
+    [SerializeField] int _currentHealth;
+    [SerializeField] int _maxHealth;
+
+    [Header("Events")]
     [SerializeField] UnityEvent _onPlayerDamage;
 
     public bool IsPlayer { get => _isPlayer; set => _isPlayer = value; }
 
     private void Reset()
     {
-        _startHealth = 30;
+        _currentHealth = 30;
         _scoreOnDeath = 10;
+    }
+
+    private void Awake()
+    {
+        _currentHealth = _maxHealth;
     }
 
     public void TakeDamage(int amount)
     {
-        _startHealth -= amount;
+        _currentHealth -= amount;
 
         if( _isPlayer )
         {
@@ -30,7 +39,7 @@ public class Health : MonoBehaviour
         }
 
 
-        if(_startHealth <= 0)
+        if(_currentHealth <= 0)
         {
             if(_isPlayer)
             {
@@ -43,6 +52,17 @@ public class Health : MonoBehaviour
             }
 
             Destroy(gameObject);
+        }
+
+    }
+
+    public void Heal(int amount)
+    {
+        _currentHealth += amount;
+
+        if(_currentHealth > _maxHealth)
+        {
+            _currentHealth = _maxHealth;
         }
 
     }

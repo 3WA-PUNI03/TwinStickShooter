@@ -126,8 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isPlayer: 0
-  _startHealth: 50
   _scoreOnDeath: 10
+  _currentHealth: 0
+  _maxHealth: 0
+  _onPlayerDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &448694698641341253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af00144e617868344a5de7bc438c7adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 5
+  _damageAmount: 35
 --- !u!1001 &3882099159593384251
 PrefabInstance:
   m_ObjectHideFlags: 0
